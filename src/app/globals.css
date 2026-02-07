@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  background-color: #050505;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  /* This adds that subtle film grain texture */
+}
+/* Add to globals.css */
+.text-stroke-white {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  color: transparent;
+}
+.text-stroke-white {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); /* 20% opacity white stroke */
+  color: transparent;
+}
