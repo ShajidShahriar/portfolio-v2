@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Badge } from "@/components/ui/Badge";
@@ -5,12 +7,15 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Github, Globe, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface ProjectsProps {
     projects: any[];
 }
 
 export const Projects = ({ projects }: ProjectsProps) => {
+    const router = useRouter();
+
     return (
         <Section id="projects" className="bg-secondary/30">
             <div className="flex flex-col gap-12">
@@ -28,7 +33,8 @@ export const Projects = ({ projects }: ProjectsProps) => {
                                 key={index}
                                 project={project}
                                 whileHover={{ y: -5 }}
-                                className="h-full"
+                                className="h-full cursor-pointer"
+                                onClick={() => router.push(`/projects/${project.id}`)}
                             >
                                 <div className="space-y-2">
                                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
@@ -47,24 +53,40 @@ export const Projects = ({ projects }: ProjectsProps) => {
                                     ))}
                                 </div>
 
-                                <div className="flex gap-3 mt-auto pt-4 border-t border-gray-100">
+                                <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
                                     {project.live_link ? (
-                                        <a href={project.live_link} target="_blank" rel="noopener noreferrer" className="flex-1">
-                                            <Button className="w-full gap-2 text-xs h-9 bg-[#625AC4] hover:bg-[#5046A5]">
+                                        <a
+                                            href={project.live_link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-full sm:flex-1"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            <Button className="w-full gap-2 text-xs h-9 bg-[#625AC4] hover:bg-[#5046A5] dark:bg-[#D0BCFF] dark:text-[#381E72] dark:hover:bg-[#E8DEF8]">
                                                 <Globe size={14} /> Live Demo
                                             </Button>
                                         </a>
                                     ) : (
-                                        <Link href={`/projects/${project.id}`} className="flex-1">
-                                            <Button className="w-full gap-2 text-xs h-9 bg-[#625AC4] hover:bg-[#5046A5]">
+                                        <Link
+                                            href={`/projects/${project.id}`}
+                                            className="w-full sm:flex-1"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            <Button className="w-full gap-2 text-xs h-9 bg-[#625AC4] hover:bg-[#5046A5] dark:bg-[#D0BCFF] dark:text-[#381E72] dark:hover:bg-[#E8DEF8]">
                                                 View Details <ArrowRight size={14} />
                                             </Button>
                                         </Link>
                                     )}
 
                                     {project.github_link && (
-                                        <a href={project.github_link} target="_blank" rel="noopener noreferrer" className="flex-1">
-                                            <Button variant="outline" className="w-full gap-2 text-xs h-9 border-gray-200 hover:bg-gray-50 text-gray-700">
+                                        <a
+                                            href={project.github_link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-full sm:flex-1"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            <Button variant="outline" className="w-full gap-2 text-xs h-9 border-gray-200 hover:bg-gray-50 text-gray-700 dark:border-white/10 dark:text-[#E2E2E6] dark:hover:bg-[#2B2930]">
                                                 <Github size={14} /> Source
                                             </Button>
                                         </a>

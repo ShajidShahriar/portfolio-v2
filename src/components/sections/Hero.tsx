@@ -22,12 +22,10 @@ export const Hero = ({ profile }: HeroProps) => {
     const bio = displayProfile?.bio || "Building accessible, pixel-perfect web experiences.";
     const resumeUrl = displayProfile?.resume_url || "#";
 
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 500], [0, 200]);
-
     return (
-        <Section className="min-h-[90vh] flex flex-col justify-center relative overflow-hidden bg-[#FDFBFF] dark:bg-[#111318]">
+        <Section className="min-h-[90vh] flex flex-col justify-center relative overflow-hidden bg-[#FDFBFF] dark:bg-[#111318] pt-32 md:pt-12">
             <div className="max-w-3xl space-y-8 relative z-10">
+                {/* ... content ... */}
                 <div className="space-y-4">
                     <Badge variant="outline" className="px-4 py-1.5 text-sm bg-[#F0FDF4] text-[#15803D] border-green-200 dark:bg-[#132A1E] dark:text-[#6DD58C] dark:border-[#1E422F]">
                         Available for projects
@@ -88,21 +86,19 @@ export const Hero = ({ profile }: HeroProps) => {
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, type: "spring", bounce: 0.4 }}
-                style={{ bottom: 0, right: 0 }}
-                className="absolute w-[200px] md:w-[320px] lg:w-[400px] z-0 pointer-events-none"
+                className="absolute right-[-20px] md:right-0 bottom-0 w-[160px] md:w-[320px] lg:w-[400px] z-0 pointer-events-none"
             >
                 {/* Minimal Speech Bubble */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.3 }}
-                    className="absolute -top-12 left-1/4 md:left-1/3 bg-[#625AC4] text-white px-4 py-2 rounded-2xl rounded-bl-none shadow-lg text-lg font-bold dark:bg-[#D0BCFF] dark:text-[#381E72]"
+                    transition={{ delay: 0.8, duration: 0.3 }}
+                    className="absolute -top-8 md:-top-12 left-1/4 md:left-1/3 bg-[#625AC4] text-white px-3 py-1 md:px-4 md:py-2 rounded-2xl rounded-bl-none shadow-lg text-base md:text-lg font-bold dark:bg-[#D0BCFF] dark:text-[#381E72]"
                 >
                     Hi!
                 </motion.div>
 
-                <motion.img
-                    style={{ y }}
+                <img
                     src="/me_waving.png"
                     alt="Waving Avatar"
                     className="w-full h-auto object-contain drop-shadow-2xl"

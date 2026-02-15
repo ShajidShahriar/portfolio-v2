@@ -8,8 +8,8 @@ export const profile: Profile = {
     avatar: "./profile.jpg",
     contact: {
         email: "your@email.com",
-        linkedin: "https://linkedin.com",
-        github: "https://github.com",
+        linkedin: "https://www.linkedin.com/in/shajid-shahriar-194301292?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BH7wQ9hDXTKqCdUWnu5hLOQ%3D%3D",
+        github: "https://github.com/ShajidShahriar",
         twitter: "https://twitter.com",
     },
     socials: [
