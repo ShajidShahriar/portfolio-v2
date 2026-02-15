@@ -1,13 +1,13 @@
 
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { profile as defaultProfile } from "@/data/content";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 interface HeroProps {

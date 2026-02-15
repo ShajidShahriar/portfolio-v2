@@ -28,7 +28,7 @@ export function Sidebar() {
         { label: "Settings", href: "/admin/settings", icon: Settings },
     ];
 
-    const NavContent = () => (
+    const renderNavContent = () => (
         <>
             <div className="mb-8 px-2 md:block hidden">
                 <h1 className="text-xl font-bold tracking-tight">Admin Panel</h1>
@@ -87,7 +87,7 @@ export function Sidebar() {
                         className="md:hidden fixed top-16 left-0 right-0 bg-card border-b border-border z-40 overflow-hidden"
                     >
                         <div className="p-6 flex flex-col gap-4">
-                            <NavContent />
+                            {renderNavContent()}
                         </div>
                     </motion.div>
                 )}
@@ -95,7 +95,7 @@ export function Sidebar() {
 
             {/* Desktop Sidebar */}
             <aside className="hidden md:flex fixed left-0 top-0 h-screen w-64 border-r border-border bg-card text-card-foreground p-6 flex-col">
-                <NavContent />
+                {renderNavContent()}
             </aside>
         </>
     );

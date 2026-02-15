@@ -38,9 +38,9 @@ export const Contact = () => {
         <Section id="contact" className="bg-[#FDFBFF] dark:bg-[#111318]">
             <div className="max-w-2xl mx-auto text-center space-y-8">
                 <div className="space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1C1B1F] dark:text-[#E2E2E6]">Let's Work Together</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1C1B1F] dark:text-[#E2E2E6]">Let&apos;s Work Together</h2>
                     <p className="text-[#5F6368] dark:text-[#C4C7C5] text-lg">
-                        Have a project in mind? I'd love to hear about it.
+                        Have a project in mind? I&apos;d love to hear about it.
                     </p>
                 </div>
 
@@ -51,7 +51,7 @@ export const Contact = () => {
                                 <CheckCircle size={32} />
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-[#E2E2E6]">Message Sent!</h3>
-                            <p className="text-gray-500 dark:text-[#C4C7C5]">Thanks for reaching out. I'll get back to you soon.</p>
+                            <p className="text-gray-500 dark:text-[#C4C7C5]">Thanks for reaching out. I&apos;ll get back to you soon.</p>
                             <Button variant="secondary" onClick={() => setSent(false)} className="dark:bg-[#2B2930] dark:text-[#E6E1E5] dark:hover:bg-[#2B2930]/80">Send Another</Button>
                         </div>
                     ) : (
