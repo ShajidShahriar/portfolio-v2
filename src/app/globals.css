@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-background: var(--background);
@@ -53,6 +54,40 @@
   --ring: #6750A4;
 
   --radius: 1rem;
+}
+
+.dark {
+  /* The Master Dark Palette */
+  --background: #111318;
+  /* Deep Charcoal */
+  --surface: #1F2229;
+  /* Lighter Card Grey */
+  --primary: #D0BCFF;
+  /* Pastel Lavender */
+  --on-primary: #381E72;
+  /* Dark Purple Text */
+  --text-main: #E2E2E6;
+  /* High Emphasis */
+  --text-muted: #C4C7C5;
+  /* Medium Emphasis */
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* Map these to Tailwind utility variables */
+  --color-background: var(--background);
+  --color-foreground: var(--text-main);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--on-primary);
+  --color-secondary: #2B2F38;
+  --color-secondary-foreground: #D0BCFF;
+  --color-muted: #1F2229;
+  --color-muted-foreground: var(--text-muted);
+  --color-accent: #D0BCFF;
+  --color-accent-foreground: #381E72;
+  --color-border: var(--border);
+  --color-input: #2B2F38;
+  --color-ring: #D0BCFF;
 }
 
 

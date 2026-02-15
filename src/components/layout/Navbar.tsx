@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Home, Folder, User, Mail, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { ModeToggle } from "@/components/ui/ModeToggle";
 
 export const Navbar = () => {
     const [active, setActive] = useState("Home");
@@ -45,67 +46,74 @@ export const Navbar = () => {
     };
 
     return (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-            {/* CONTAINER: No background, just Flex */}
-            <nav className="flex items-center shadow-lg rounded-full">
-                {navItems.map((item, index) => {
-                    const isActive = active === item.label;
-                    const isFirst = index === 0;
-                    const isLast = index === navItems.length - 1;
+        <>
+            <div className="fixed top-6 right-6 z-50">
+                <ModeToggle />
+            </div>
 
-                    return (
-                        <button
-                            key={item.label}
-                            onClick={() => {
-                                setActive(item.label);
-                                scrollToSection(item.id);
-                            }}
-                            className={`
-                                relative flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium
-                                overflow-hidden transition-colors duration-200
-                                
-                                /* BASE COLORS (Secondary/Inactive) */
-                                bg-secondary hover:bg-secondary/80
-                                
-                                /* TEXT COLORS */
-                                ${isActive ? "text-primary-foreground" : "text-muted-foreground"}
+            <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+                {/* CONTAINER: No background, just Flex */}
+                <nav className="flex items-center shadow-lg rounded-full bg-white/80 backdrop-blur-md border border-white/20 dark:bg-[#1F2229] dark:border-white/10 dark:backdrop-blur-none transition-colors duration-300">
+                    {navItems.map((item, index) => {
+                        const isActive = active === item.label;
+                        const isFirst = index === 0;
+                        const isLast = index === navItems.length - 1;
 
-                                /* SHAPE LOGIC */
-                                ${isFirst ? "rounded-l-full pl-8" : ""}
-                                ${isLast ? "rounded-r-full pr-8" : ""}
-                                
-                                /* SEPARATORS (Border matches bg) */
-                                ${!isLast ? "border-r border-background/20" : ""}
-                            `}
-                        >
-                            {/* THE SLIDING DARK BACKGROUND */}
-                            {isActive && (
-                                <motion.div
-                                    layoutId="active-segment"
-                                    className="absolute inset-0 bg-primary -z-0"
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 300,
-                                        damping: 30
-                                    }}
-                                />
-                            )}
+                        return (
+                            <button
+                                key={item.label}
+                                onClick={() => {
+                                    setActive(item.label);
+                                    scrollToSection(item.id);
+                                }}
+                                className={`
+                                    relative flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium
+                                    overflow-hidden transition-colors duration-200
+                                    
+                                    /* BASE COLORS (Secondary/Inactive) */
+                                    bg-secondary hover:bg-secondary/80
+                                    dark:bg-[#1F2229] dark:hover:bg-[#2B2F38]
+                                    
+                                    /* TEXT COLORS */
+                                    ${isActive ? "text-primary-foreground dark:text-[#381E72]" : "text-muted-foreground dark:text-[#C4C7C5]"}
 
-                            {/* CONTENT (Relative to sit on top) */}
-                            <span className="relative z-10 flex items-center gap-2">
-                                {/* Optional: Swap icon for Checkmark when active like your image */}
-                                {isActive ? (
-                                    <Check size={16} strokeWidth={3} />
-                                ) : (
-                                    <item.icon size={16} strokeWidth={2} />
+                                    /* SHAPE LOGIC */
+                                    ${isFirst ? "rounded-l-full pl-8" : ""}
+                                    ${isLast ? "rounded-r-full pr-8" : ""}
+                                    
+                                    /* SEPARATORS (Border matches bg) */
+                                    ${!isLast ? "border-r border-background/20 dark:border-white/10" : ""}
+                                `}
+                            >
+                                {/* THE SLIDING DARK BACKGROUND */}
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="active-segment"
+                                        className="absolute inset-0 bg-primary dark:bg-[#D0BCFF] -z-0"
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 300,
+                                            damping: 30
+                                        }}
+                                    />
                                 )}
 
-                                <span className="hidden md:block">{item.label}</span>
-                            </span>
-                        </button>
-                    );
-                })}
-            </nav>
-        </div>
+                                {/* CONTENT (Relative to sit on top) */}
+                                <span className="relative z-10 flex items-center gap-2">
+                                    {/* Optional: Swap icon for Checkmark when active like your image */}
+                                    {isActive ? (
+                                        <Check size={16} strokeWidth={3} />
+                                    ) : (
+                                        <item.icon size={16} strokeWidth={2} />
+                                    )}
+
+                                    <span className="hidden md:block">{item.label}</span>
+                                </span>
+                            </button>
+                        );
+                    })}
+                </nav>
+            </div>
+        </>
     );
 };

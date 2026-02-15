@@ -35,63 +35,63 @@ export const Contact = () => {
     };
 
     return (
-        <Section id="contact" className="bg-[#FDFBFF]">
+        <Section id="contact" className="bg-[#FDFBFF] dark:bg-[#111318]">
             <div className="max-w-2xl mx-auto text-center space-y-8">
                 <div className="space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1C1B1F]">Let's Work Together</h2>
-                    <p className="text-[#5F6368] text-lg">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1C1B1F] dark:text-[#E2E2E6]">Let's Work Together</h2>
+                    <p className="text-[#5F6368] dark:text-[#C4C7C5] text-lg">
                         Have a project in mind? I'd love to hear about it.
                     </p>
                 </div>
 
-                <Card className="text-left bg-white shadow-xl border border-gray-100 rounded-[32px] p-8 md:p-12">
+                <Card className="text-left bg-white dark:bg-[#1F2229] shadow-xl border border-gray-100 dark:border-white/10 rounded-[32px] p-8 md:p-12">
                     {sent ? (
                         <div className="flex flex-col items-center justify-center h-[400px] text-center space-y-4">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                            <div className="w-16 h-16 bg-green-100 dark:bg-[#132A1E] rounded-full flex items-center justify-center text-green-600 dark:text-[#6DD58C]">
                                 <CheckCircle size={32} />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">Message Sent!</h3>
-                            <p className="text-gray-500">Thanks for reaching out. I'll get back to you soon.</p>
-                            <Button variant="secondary" onClick={() => setSent(false)}>Send Another</Button>
+                            <h3 className="text-2xl font-bold text-gray-900 dark:text-[#E2E2E6]">Message Sent!</h3>
+                            <p className="text-gray-500 dark:text-[#C4C7C5]">Thanks for reaching out. I'll get back to you soon.</p>
+                            <Button variant="secondary" onClick={() => setSent(false)} className="dark:bg-[#2B2930] dark:text-[#E6E1E5] dark:hover:bg-[#2B2930]/80">Send Another</Button>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-medium text-gray-700">Name</label>
+                                    <label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-[#E2E2E6]">Name</label>
                                     <input
                                         name="name"
                                         id="name"
                                         type="text"
                                         required
-                                        className="flex h-12 w-full rounded-2xl border border-transparent bg-gray-50 px-4 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 transition-all"
+                                        className="flex h-12 w-full rounded-2xl border border-transparent bg-gray-50 dark:bg-[#2B2F38] px-4 py-2 text-sm text-gray-900 dark:text-[#E2E2E6] placeholder:text-gray-400 dark:placeholder:text-[#C4C7C5] focus:bg-white dark:focus:bg-[#2B2F38] focus:border-purple-500 dark:focus:border-[#D0BCFF] focus:ring-4 focus:ring-purple-500/10 dark:focus:ring-[#D0BCFF]/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 transition-all"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+                                    <label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-[#E2E2E6]">Email</label>
                                     <input
                                         name="email"
                                         id="email"
                                         type="email"
                                         required
-                                        className="flex h-12 w-full rounded-2xl border border-transparent bg-gray-50 px-4 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 transition-all"
+                                        className="flex h-12 w-full rounded-2xl border border-transparent bg-gray-50 dark:bg-[#2B2F38] px-4 py-2 text-sm text-gray-900 dark:text-[#E2E2E6] placeholder:text-gray-400 dark:placeholder:text-[#C4C7C5] focus:bg-white dark:focus:bg-[#2B2F38] focus:border-purple-500 dark:focus:border-[#D0BCFF] focus:ring-4 focus:ring-purple-500/10 dark:focus:ring-[#D0BCFF]/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 transition-all"
                                         placeholder="john@example.com"
                                     />
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-medium text-gray-700">Message</label>
+                                <label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-[#E2E2E6]">Message</label>
                                 <textarea
                                     name="message"
                                     id="message"
                                     required
-                                    className="flex min-h-[120px] w-full rounded-2xl border border-transparent bg-gray-50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 resize-y transition-all"
+                                    className="flex min-h-[120px] w-full rounded-2xl border border-transparent bg-gray-50 dark:bg-[#2B2F38] px-4 py-3 text-sm text-gray-900 dark:text-[#E2E2E6] placeholder:text-gray-400 dark:placeholder:text-[#C4C7C5] focus:bg-white dark:focus:bg-[#2B2F38] focus:border-purple-500 dark:focus:border-[#D0BCFF] focus:ring-4 focus:ring-purple-500/10 dark:focus:ring-[#D0BCFF]/10 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 resize-y transition-all"
                                     placeholder="Tell me about your project..."
                                 />
                             </div>
                             <Button
-                                className="w-full bg-[#625AC4] hover:bg-[#5046A5] text-white shadow-[0_4px_20px_rgba(98,90,196,0.3)] hover:shadow-[0_6px_25px_rgba(98,90,196,0.4)] transition-all h-12 text-base rounded-2xl"
+                                className="w-full bg-[#625AC4] hover:bg-[#5046A5] text-white shadow-[0_4px_20px_rgba(98,90,196,0.3)] hover:shadow-[0_6px_25px_rgba(98,90,196,0.4)] transition-all h-12 text-base rounded-2xl dark:bg-[#D0BCFF] dark:text-[#381E72] dark:hover:bg-[#E8DEF8] dark:shadow-[0_4px_20px_rgba(208,188,255,0.2)]"
                                 size="lg"
                                 disabled={loading}
                             >
