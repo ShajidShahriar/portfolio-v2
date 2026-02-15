@@ -3,8 +3,8 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "default" | "outline" | "ghost";
-    size?: "sm" | "md" | "lg";
+    variant?: "default" | "outline" | "ghost" | "secondary";
+    size?: "sm" | "md" | "lg" | "icon";
     withArrow?: boolean;
 }
 
@@ -16,18 +16,20 @@ export const Button = ({
     withArrow = false,
     ...props
 }: ButtonProps) => {
-    const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none rounded-full focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2";
+    const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none rounded-full focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 whitespace-nowrap";
 
     const variants = {
         default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         ghost: "hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
     };
 
     const sizes = {
         sm: "h-9 px-3 text-xs",
         md: "h-11 px-8 py-2 text-sm",
         lg: "h-14 px-8 text-base",
+        icon: "h-10 w-10 p-0",
     };
 
     return (

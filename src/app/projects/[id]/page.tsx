@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { ArrowLeft, Github, Globe } from "lucide-react";
 import Link from "next/link";
-import { Navbar } from "@/components/layout/Navbar";
+
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -18,7 +18,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     return (
         <div className="min-h-screen bg-background text-foreground font-sans">
-            <Navbar />
+
 
             <main className="pt-32 pb-16 px-4">
                 <div className="max-w-4xl mx-auto space-y-8">
@@ -70,7 +70,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                     )}
                                     {project.github_link && (
                                         <a href={project.github_link} target="_blank" rel="noopener noreferrer" className="block w-full">
-                                            <Button variant="outline" className="w-full gap-2 rounded-full" size="lg">
+                                            <Button variant="secondary" className="w-full gap-2 rounded-full" size="lg">
                                                 <Github size={18} /> Source Code
                                             </Button>
                                         </a>
@@ -82,7 +82,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 <h3 className="font-bold text-xl">Tech Stack</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tech_stack?.map((tech: string) => (
-                                        <Badge key={tech} variant="outline" className="px-3 py-1">
+                                        <Badge key={tech} variant="secondary" className="px-3 py-1">
                                             {tech}
                                         </Badge>
                                     ))}

@@ -20,51 +20,42 @@
 }
 
 :root {
-  /* Warm Dark Brown / Red Clay Theme based on User Image */
+  /* Purple / Lavender Theme (Material 3 Expressive) */
 
-  /* Main Background: Very Dark Warm Brown/Black */
-  --background: #191414;
-  /* Text: Soft Warm White/Grey */
-  --foreground: #F0EAE9;
+  /* Main Background: Very Light Lavender/White */
+  --background: #FFFBFE;
+  /* Text: Almost Black/Deep Purple */
+  --foreground: #1C1B1F;
 
-  /* Card Surface: Slightly lighter warm dark brown */
-  --card: #201A1A;
-  --card-foreground: #F0EAE9;
+  /* Card Surface: Light Lavender (Surface Variant) */
+  --card: #F3EDF7;
+  --card-foreground: #49454F;
 
-  /* Primary Action: Muted Terracotta / Clay Red (Matches FAB/Active states) */
-  --primary: #9C5F59;
+  /* Primary Action: Deep Purple */
+  --primary: #6750A4;
   --primary-foreground: #FFFFFF;
 
-  /* Secondary Elements: Deep Brown (Matches inactive pills/backgrounds) */
-  --secondary: #3E2D2D;
-  --secondary-foreground: #F0EAE9;
+  /* Secondary Elements: Light Lavender (Inactive states) */
+  --secondary: #E8DEF8;
+  --secondary-foreground: #1D192B;
 
-  /* Muted Text/Icons: Greyish Brown */
-  --muted: #3E2D2D;
-  --muted-foreground: #AFA09E;
+  /* Muted Text: Deep Grey/Purple */
+  --muted: #E8DEF8;
+  --muted-foreground: #49454F;
 
-  /* Accents/Highlights: Peach/Light Pink (Matches Star icon bg) */
-  --accent: #E8BDBA;
-  --accent-foreground: #2C1816;
+  /* Accents */
+  --accent: #E8DEF8;
+  --accent-foreground: #1D192B;
 
-  /* Borders: Subtle Brown */
-  --border: #3E2D2D;
-  --input: #3E2D2D;
-  --ring: #9C5F59;
+  /* Borders */
+  --border: #CAC4D0;
+  --input: #E8DEF8;
+  --ring: #6750A4;
 
   --radius: 1rem;
-  /* More rounded like Material 3 */
 }
 
-/* 
-   Since the user wants this specific look, we'll keep it consistent across modes 
-   or allow system dark mode to just use the same values if we want to enforce it.
-   For now, let's make sure Dark Mode uses the same or slightly tweaked values if needed.
-   Actually, the image IS dark mode. I'll force this look for now by removing the media query override 
-   or just setting it as default in :root. 
-   I will remove the separate light/dark mode for now to ensure this specific palette is applied always 
-   as per the request "implement this color pallete".
-*/
+
 
 body {
   background-color: var(--background);

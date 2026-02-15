@@ -160,7 +160,7 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
 
                     <div className="pt-4 flex justify-end gap-4">
                         <Link href="/admin/projects">
-                            <Button type="button" variant="outline">Cancel</Button>
+                            <Button type="button" variant="secondary">Cancel</Button>
                         </Link>
                         <Button type="submit" disabled={loading}>
                             {loading ? <Loader2 className="animate-spin" /> : (isEditing ? "Save Changes" : "Create Project")}

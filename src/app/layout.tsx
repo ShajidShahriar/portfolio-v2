@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 
+
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description: "Senior Software Engineer Portfolio",
 };
 
-import ThemeInjector from "@/components/ThemeInjector";
+
 
 export default function RootLayout({
   children,
@@ -24,7 +25,6 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} antialiased font-sans`}
       >
-        <ThemeInjector />
         {children}
       </body>
     </html>

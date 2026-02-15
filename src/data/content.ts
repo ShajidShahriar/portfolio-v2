@@ -65,3 +65,40 @@ export const education = [
         location: "Motijheel, Dhaka",
     },
 ];
+
+export const techStack = [
+    { name: "React", icon: "Atom" },
+    { name: "Next.js", icon: "Layers" },
+    { name: "Node.js", icon: "Server" },
+    { name: "TypeScript", icon: "FileCode" },
+    { name: "Tailwind CSS", icon: "Wind" },
+    { name: "MongoDB", icon: "Database" },
+    { name: "Supabase", icon: "Database" },
+    { name: "PostgreSQL", icon: "Database" },
+    { name: "Python", icon: "FileJson" },
+    { name: "OpenAI API", icon: "Cpu" },
+];
+
+export const skills = {
+    frontend: [
+        { name: "React", icon: "Atom", desc: "Building interactive UIs" },
+        { name: "Next.js", icon: "Layers", desc: "Full-stack apps & SEO" },
+        { name: "Tailwind CSS", icon: "Wind", desc: "Rapid styling" },
+        { name: "TypeScript", icon: "FileCode", desc: "Type-safe code" },
+        { name: "Framer Motion", icon: "Move", desc: "Smooth animations" },
+    ],
+    backend: [
+        { name: "Node.js", icon: "Server", desc: "Scalable APIs" },
+        { name: "MongoDB", icon: "Database", desc: "NoSQL data storage" },
+        { name: "PostgreSQL", icon: "Database", desc: "Relational data" },
+        { name: "Supabase", icon: "Database", desc: "Backend as a Service" },
+    ],
+    tools: [
+        { name: "Git", icon: "GitBranch", desc: "Version control" },
+        { name: "Docker", icon: "Container", desc: "Containerization" },
+        { name: "Python", icon: "FileJson", desc: "Scripts & AI" },
+        { name: "OpenAI API", icon: "Cpu", desc: "Generative AI integration" },
+    ],
+};
+
+
