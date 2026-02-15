@@ -9,9 +9,10 @@ import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { motion } from "framer-motion";
 
+import { Profile } from "@/types/schema";
 
 interface HeroProps {
-    profile: any;
+    profile: Profile | null;
 }
 
 export const Hero = ({ profile }: HeroProps) => {

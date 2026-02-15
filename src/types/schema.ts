@@ -41,7 +41,15 @@ export interface Profile {
     name: string;
     title: string;
     bio: string;
-    avatar: string; // URL to image
+    // URL to image (used in AdminProfilePage as image_url, but code says avatar in schema.ts? 
+    // Let's check usage. AdminProfilePage uses image_url. content.ts uses avatar. 
+    // Let's add both or standardize. AdminProfilePage uses image_url. Hero uses avatar from content.ts default, but checks profile.
+    // Let's add all likely fields.)
+    avatar?: string;
+    image_url?: string;
+    resume_url?: string;
     contact: Contact;
     socials: Social[];
+    // Add missing fields if any
+    id?: string;
 }
